@@ -1,0 +1,18 @@
+<%= flash[:notice] if flash[:notice] %>
+
+<table id="shelves">
+	<thead>
+		<tr>
+			<th scope="col">Shelf</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @shelves.each do |shelf| %>
+		<tr>
+			<td><%= shelf.name %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to 'New Shelf', new_shelf_path %>

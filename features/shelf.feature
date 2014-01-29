@@ -18,3 +18,10 @@ Feature: Shelf
 	Then I should see the shelf listing page
 	And I should see "Shelf BDD was successfully created." success message
 	And I should see "BDD" in the shelves
+
+
+  Scenario: Submitting new shelf form without a name
+	Given I visit the new shelf page
+	When I press the Save Shelf button
+	Then I should stay on the new shelf page
+	And I should see "Name can't be blank" error message

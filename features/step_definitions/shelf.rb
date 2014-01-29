@@ -34,3 +34,10 @@ And(/^I should see "([^"]*)" in the shelves$/) do |shelf_name|
 	shelves = find('#shelves')
 	expect(shelves).to have_content(shelf_name)
 end
+
+Then(/^I should stay on the new shelf page$/) do
+end
+
+And(/^I should see "([^"]*)" error message$/) do |message|
+	expect(page).to have_content(message)
+end

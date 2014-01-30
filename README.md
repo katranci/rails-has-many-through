@@ -73,8 +73,8 @@ Installation
 
 Routes
 ------
-* http://localhost:3000/shelves
-* http://localhost:3000/books
+* [http://localhost:3000/shelves](http://localhost:3000/shelves)
+* [http://localhost:3000/books](http://localhost:3000/books)
   
 Running Tests
 -------------
@@ -84,4 +84,4 @@ Running Tests
 
 Contribute
 ----------
-Please fill free to fork this repository and create more examples of has_many :through association.
+Please feel free to fork this repository and create more examples of has_many :through association.

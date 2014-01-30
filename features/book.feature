@@ -26,3 +26,12 @@ Feature: Book
 	Then I should stay on the new book page
 	And I should see "Name can't be blank" error message
 	And "BDD" shelf should be checked
+
+
+  Scenario: Submitting new book form without a shelf
+	Given I visit the new book page
+	When I fill in the Name field with "The RSpec Book"
+	And I press the Save Book button
+	Then I should stay on the new book page
+	And I should see "Shelves can't be blank" error message
+	And the Name field should be pre-filled with "The RSpec Book"

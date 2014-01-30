@@ -4,5 +4,6 @@ class Book < ActiveRecord::Base
 	has_many :shelves, :through => :book_shelves
 
 	validates_presence_of :name
+	validates_presence_of :shelves
 
 end

@@ -33,3 +33,7 @@ end
 And(/^"([^"]*)" shelf should be checked$/) do |shelf_name|
 	expect(field_labeled(shelf_name)).to be_checked
 end
+
+And(/^the (.*) field should be pre-filled with "([^"]*)"$/) do |field, value|
+	expect(field_labeled(field).value).to eq(value)
+end

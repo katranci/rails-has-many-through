@@ -1,0 +1,31 @@
+<% if @book.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+		<ul>
+			<% @book.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
+<%= form_for @book, html: {novalidate: 'novalidate'} do |book_form| %>
+	<p>
+		<%= book_form.label :name %>
+		<%= book_form.text_field :name, :required => true %>
+	</p>
+	<%= field_set_tag 'Shelves' do %>
+		<% @shelves.each do |shelf| %>
+			<p>
+				<%= check_box_tag 'book[shelf_ids][]',
+						shelf.id,
+						@book.shelves.include?(shelf),
+						id: 'book_shelf_ids_' + shelf.id.to_s %>
+				<%= label_tag 'book_shelf_ids_' + shelf.id.to_s, shelf.name %></p>
+		<% end %>
+	<% end %>
+	<p>
+		<%= book_form.submit 'Save Book' %>
+	</p>
+<% end %>

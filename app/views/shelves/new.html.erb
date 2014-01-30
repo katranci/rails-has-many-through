@@ -10,7 +10,7 @@
 <% end %>
 
 
-<%= form_for @shelf do |shelf_form| %>
+<%= form_for @shelf, html: {novalidate: 'novalidate'} do |shelf_form| %>
 	<p>
 		<%= shelf_form.label :name %>
 		<%= shelf_form.text_field :name, :required => true %>
